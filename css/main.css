@@ -7,24 +7,26 @@
   --font-heading: 'Lato', sans-serif;
   --font-body: 'Karla', sans-serif;
   --max-width: 1200px;
-  --bp-tablet: 768px;
-  --bp-desktop: 1100px;
 }
+
 html {
   font-size: 16px;
   scroll-behavior: smooth;
 }
+
 body {
   background: var(--color-bg);
   color: var(--color-black);
   font-family: var(--font-body);
   line-height: 1.6;
 }
+
 .wrapper {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 1rem;
 }
+
 .skip-link {
   position: absolute;
   left: -999px;
@@ -40,9 +42,10 @@ body {
   height: auto;
   background: var(--color-primary);
   color: var(--color-white);
-  padding: 0.5rem 1rem;
+  padding: .5rem 1rem;
   z-index: 1000;
 }
+
 header {
   position: absolute;
   top: 0;
@@ -56,6 +59,7 @@ header {
   align-items: center;
   padding: 1rem 0;
 }
+
 .nav-list {
   list-style: none;
   display: flex;
@@ -64,15 +68,16 @@ header {
 .nav-list a {
   font-family: var(--font-heading);
   text-transform: uppercase;
-  font-size: 0.875rem;
-  letter-spacing: 0.1em;
+  font-size: .875rem;
+  letter-spacing: .1em;
   color: var(--color-white);
-  transition: color 0.3s;
+  transition: color .3s;
 }
 .nav-list a:hover,
 .nav-list a:focus {
   color: var(--color-primary);
 }
+
 .hero {
   position: relative;
   overflow: hidden;
@@ -83,17 +88,14 @@ header {
 .hero::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
   z-index: 1;
 }
 .hero-text {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   color: var(--color-white);
@@ -117,29 +119,31 @@ header {
   color: var(--color-black);
   border: 1px solid var(--color-black);
   font-family: var(--font-body);
-  padding: 0.75rem 1.5rem;
+  padding: .75rem 1.5rem;
   border-radius: 4px;
   cursor: pointer;
-  transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+  transition: background .3s, box-shadow .3s, color .3s;
 }
 .btn-primary:hover,
 .btn-primary:focus {
   background: var(--color-bg);
 }
+
 .btn-secondary {
   background: var(--color-black);
   color: var(--color-white);
   border: none;
   font-family: var(--font-body);
-  padding: 0.75rem 1.5rem;
+  padding: .75rem 1.5rem;
   border-radius: 4px;
   cursor: pointer;
-  transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+  transition: background .3s, box-shadow .3s, color .3s;
 }
 .btn-secondary:hover,
 .btn-secondary:focus {
   background: #333;
 }
+
 h2 {
   font-family: var(--font-heading);
   font-size: 1.75rem;
@@ -150,21 +154,24 @@ h3 {
   font-family: var(--font-heading);
   font-size: 1.375rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: .5rem;
 }
 p {
   font-size: 1rem;
   margin-bottom: 1rem;
 }
+
 section {
   padding: 4rem 0;
 }
+
 .image-grid .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin-top: 2rem;
 }
+
 .features-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -175,6 +182,7 @@ section {
   width: 60px;
   margin: 0 auto 1rem;
 }
+
 #cta-cards {
   display: grid;
   gap: 1.5rem;
@@ -195,7 +203,7 @@ section {
   position: absolute;
   bottom: 2rem;
   left: 2rem;
-  color: #fff;
+  color: var(--color-white);
   max-width: 60%;
 }
 #cta-cards .card-text h3 {
@@ -207,8 +215,9 @@ section {
   background: var(--color-primary);
   color: var(--color-black);
   border: none;
-  padding: 0.75rem 1.5rem;
+  padding: .75rem 1.5rem;
 }
+
 .about {
   display: grid;
   grid-template-columns: 1fr;
@@ -217,6 +226,7 @@ section {
 .about-image img {
   width: 100%;
 }
+
 .testimonials-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -242,6 +252,7 @@ section {
   left: 1rem;
   font-weight: 700;
 }
+
 footer {
   background: var(--color-black);
   color: var(--color-white);
@@ -260,8 +271,9 @@ footer {
   color: var(--color-white);
   text-transform: uppercase;
   font-family: var(--font-heading);
-  letter-spacing: 0.1em;
+  letter-spacing: .1em;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -272,7 +284,8 @@ footer {
     transform: translateY(0);
   }
 }
-@media (min-width: var(--bp-tablet)) {
+
+@media (min-width: 768px) {
   .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -319,7 +332,8 @@ footer {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-@media (min-width: var(--bp-desktop)) {
+
+@media (min-width: 1100px) {
   h1 {
     font-size: 3.875rem;
   }
