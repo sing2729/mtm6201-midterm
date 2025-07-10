@@ -1,0 +1,338 @@
+/* css/main.css */
+
+/* 1. Variables */
+:root {
+  --color-bg: #f3f0e9;
+  --color-primary: #d69e3d;
+  --color-secondary: #966f2c;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-purple: #966f2c33; /* for border focus if needed */
+  --font-heading: 'Lato', sans-serif;
+  --font-body: 'Karla', sans-serif;
+  --max-width: 1200px;
+  --bp-tablet: 768px;
+  --bp-desktop: 1200px;
+}
+
+/* 2. Base */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--color-bg);
+  color: var(--color-black);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+.wrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+/* Skip-link */
+.skip-link {
+  position: absolute; left: -999px; top: auto;
+  width: 1px; height: 1px; overflow: hidden;
+}
+.skip-link:focus {
+  left: 0; top: 0; width: auto; height: auto;
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: .5rem 1rem;
+  z-index: 1000;
+}
+
+/* 3. Nav & Header */
+header {
+  position: absolute;
+  top: 0; left: 0; width: 100%;
+  z-index: 10;
+}
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.nav-list a {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  color: var(--color-white);
+  transition: color .3s;
+}
+.nav-list a:hover,
+.nav-list a:focus {
+  color: var(--color-primary);
+}
+
+/* 4. Hero */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+.hero-image img {
+  width: 100%;
+  display: block;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.4);
+  z-index:1;
+}
+.hero-text {
+  position: absolute;
+  top:50%; left:50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--color-white);
+  z-index:2;
+  animation: fadeIn 1s ease-out both;
+}
+.hero-text h1 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight:700;
+  line-height:1.2;
+  text-transform: uppercase;
+  margin-bottom:1rem;
+}
+.hero-text p {
+  font-size: 1rem;
+  margin-bottom:2rem;
+}
+.hero-text .btn-primary {
+  /* white button as in Figma */
+  background: var(--color-white);
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
+}
+
+/* 5. Button Variants */
+.btn {
+  font-family: var(--font-body);
+  padding: .75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background .3s, box-shadow .3s, color .3s;
+}
+.btn-primary {
+  background: var(--color-white);
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background: var(--color-bg);
+}
+.btn-gold {
+  background: var(--color-primary);
+  color: var(--color-black);
+  border: none;
+}
+.btn-gold:hover,
+.btn-gold:focus {
+  background: var(--color-secondary);
+}
+.btn-purple {
+  background: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+.btn-purple:hover,
+.btn-purple:focus {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* 6. Typography (Mobile) */
+h2 {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight:700;
+  margin-bottom:1rem;
+}
+h3 {
+  font-family: var(--font-heading);
+  font-size: 1.375rem;
+  font-weight:700;
+  margin-bottom:.5rem;
+}
+p {
+  font-size:1rem;
+  margin-bottom:1rem;
+}
+
+/* 7. Section Spacing */
+section {
+  padding: 4rem 0;
+}
+
+/* 8. Image Grid */
+.image-grid .grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap:1rem;
+  margin-top:2rem;
+}
+
+/* 9. Features */
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap:2rem;
+  text-align: center;
+}
+.feature-card img {
+  width: 60px;
+  margin: 0 auto 1rem;
+}
+
+/* 10. CTA Cards */
+.cta-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap:2rem;
+}
+.cta-cards .card {
+  position: relative;
+}
+.cta-cards .card img {
+  width:100%;
+  display:block;
+}
+.cta-cards .card-text {
+  position: absolute;
+  bottom:1rem; left:1rem;
+  color: var(--color-white);
+}
+.cta-cards .btn-gold {
+  margin-top:.5rem;
+}
+
+/* 11. About */
+.about {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap:2rem;
+}
+.about-image img {
+  width:100%;
+}
+.about-text .btn-purple {
+  margin-top:1rem;
+}
+
+/* 12. Testimonials */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap:2rem;
+}
+.testimonial {
+  position: relative;
+  color: var(--color-white);
+}
+.testimonial img {
+  width:100%;
+  display:block;
+}
+.testimonial blockquote {
+  position: absolute;
+  bottom:4rem; left:1rem;
+  font-style: italic;
+  max-width:80%;
+}
+.testimonial .author {
+  position: absolute;
+  bottom:1rem; left:1rem;
+  font-weight:700;
+}
+
+/* 13. Footer */
+footer {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+.footer {
+  padding:4rem 0;
+  text-align:center;
+}
+.footer-nav ul {
+  display:flex;
+  justify-content:center;
+  gap:2rem;
+  margin-bottom:2rem;
+}
+.footer-nav a {
+  color: var(--color-white);
+  text-transform: uppercase;
+  font-family: var(--font-heading);
+  letter-spacing: .1em;
+}
+
+/* 14. Animation */
+@keyframes fadeIn {
+  from { opacity:0; transform: translateY(10px); }
+  to   { opacity:1; transform: translateY(0); }
+}
+
+/* 15. Media Queries */
+@media (min-width: var(--bp-tablet)) {
+  /* Hero two-column */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  .hero-text {
+    text-align: left;
+    transform: translate(0,0);
+    top: auto; bottom: 2rem; left: 2rem;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2.375rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  /* Features three-column */
+  .features-grid {
+    grid-template-columns: repeat(3,1fr);
+  }
+  /* CTA two-column */
+  .cta-cards {
+    grid-template-columns: repeat(2,1fr);
+  }
+  /* About two-column */
+  .about {
+    grid-template-columns: repeat(2,1fr);
+  }
+  /* Testimonials two-column */
+  .testimonials-grid {
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+@media (min-width: var(--bp-desktop)) {
+  h1 {
+    font-size: 3.875rem;
+  }
+  section {
+    padding: 6rem 0;
+  }
+}
